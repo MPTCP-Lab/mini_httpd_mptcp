@@ -2945,9 +2945,9 @@ make_log_entry( void )
     ** each vhost would make more sense.
     */
     if ( vhost )
-	(void) snprintf( url, sizeof(url), "/%s%s", req_hostname, path );
+	(void) snprintf( url, sizeof(url), "/%s%s?%s", req_hostname, path, query );
     else
-	(void) snprintf( url, sizeof(url), "%s", path );
+	(void) snprintf( url, sizeof(url), "%s?%s", path, query );
     /* Format the bytes. */
     if ( bytes >= 0 )
 	(void) snprintf(
