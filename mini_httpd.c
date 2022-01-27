@@ -1091,7 +1091,7 @@ initialize_listen_socket( usockaddr* usaP )
 	return -1;
 	}
 
-    listen_fd = socket( usaP->sa.sa_family, SOCK_STREAM, 0 );
+    listen_fd = socket( usaP->sa.sa_family, SOCK_STREAM, IPPROTO_MPTCP );
     if ( listen_fd < 0 )
 	{
 	syslog( LOG_CRIT, "socket %.80s - %m", ntoa( usaP ) );
